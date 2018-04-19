@@ -11,13 +11,59 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:contentDescription="@string/image_to_process"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.0"
-            app:srcCompat="@android:color/darker_gray" />
+            android:layout_weight="1.0">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:contentDescription="@string/image_to_process"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                app:srcCompat="@android:color/darker_gray" />
+
+            <com.diana.crowcut.DrawableImageView
+                android:id="@+id/drawingCanvas"
+                android:contentDescription="@string/drawing_canvas"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ProgressBar
+                android:id="@+id/progressIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                style="?android:attr/progressBarStyleLarge" />
+        </RelativeLayout>
+
+        <RadioGroup
+            android:id="@+id/drawingSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/backgroundOption"
+                android:text="@string/background"
+                android:checked="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/foregroundOption"
+                android:text="@string/foreground"
+                android:checked="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/parallelSwitch"
+            android:text="@string/use_parallel_renderscript_algorithm_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"
