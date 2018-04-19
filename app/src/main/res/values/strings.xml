@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CrowCut</string>
+    <string name="process">Process</string>
+    <string name="load_image">Load image</string>
+    <string name="save_result">Save result</string>
+    <string name="image_to_process">Image to process</string>
 </resources>
